@@ -2,8 +2,7 @@ import { Box, IconButton, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { MenuDots } from "../../../assets/images";
 import ChatList from "./List";
-import { useDispatch, useSelector } from "react-redux";
-import { setOpenProfile } from "../../../store/slices/dataSlice";
+import { useSelector } from "react-redux";
 
 const main_div = (theme) => {
   return {
@@ -59,7 +58,6 @@ const textFieldStyle = (theme) => {
 };
 
 const ChatSideBar = () => {
-  const dispatch = useDispatch();
   const open = useSelector((state) => state.data.sideBar);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -77,14 +75,6 @@ const ChatSideBar = () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    if (isSmallScreen) {
-      dispatch(setOpenProfile({ open: false }));
-    } else {
-      dispatch(setOpenProfile({ open: true }));
-    }
-  }, [isSmallScreen, dispatch]);
 
   return (open && isSmallScreen) || !isSmallScreen ? (
     <Box sx={main_div}>
