@@ -28,7 +28,11 @@ Follow these commands to run project successfully.
    npm install
    ```
 
-3. All done :smile:
+3. All done :smile and start the development server:
+
+```sh
+  npm start
+```
 
 <!-- USAGE  -->
 
