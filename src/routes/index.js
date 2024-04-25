@@ -34,7 +34,9 @@ const AppRoutes = () => {
 
   useEffect(() => {
     if (isSmallScreen === true) {
-      dispatch(setOpenProfile());
+      dispatch(setOpenProfile(false));
+    } else if (isSmallScreen === false) {
+      dispatch(setOpenProfile(true));
     }
   }, [isSmallScreen, dispatch]);
   return (

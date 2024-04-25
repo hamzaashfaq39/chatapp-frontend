@@ -13,8 +13,8 @@ export const dataSlice = createSlice({
     setUserData: (state, action) => {
       state.data = action.payload;
     },
-    setOpenProfile: (state) => {
-      state.open = !state.open;
+    setOpenProfile: (state, action) => {
+      state.open = action.payload;
     },
     setOpenSideBar: (state, action) => {
       state.sideBar = action.payload;

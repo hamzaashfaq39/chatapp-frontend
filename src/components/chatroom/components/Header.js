@@ -7,7 +7,7 @@ import {
   PhoneIcon,
   videoIcon,
 } from "../../../assets/images";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setOpenProfile,
   setOpenSideBar,
@@ -54,6 +54,8 @@ const icon_button2 = {
 
 const Header = ({ data, isSmallScreen }) => {
   const dispatch = useDispatch();
+  const open = useSelector((state) => state.data.open);
+
   return (
     <Box sx={main_div}>
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -90,7 +92,7 @@ const Header = ({ data, isSmallScreen }) => {
         </IconButton>
         <IconButton
           sx={icon_button2}
-          onClick={() => dispatch(setOpenProfile())}
+          onClick={() => dispatch(setOpenProfile(!open))}
         >
           <img src={InfoIcon} alt="broadcast" width="100%" />
         </IconButton>

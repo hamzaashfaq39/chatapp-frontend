@@ -28,7 +28,7 @@ const Profile = () => {
           anchor="right"
           open={open}
           onClose={() => {
-            dispatch(setOpenProfile({ open: false }));
+            dispatch(setOpenProfile(false));
           }}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
